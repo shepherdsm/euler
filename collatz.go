@@ -1,20 +1,20 @@
 package euler
 
 func Collatz(seed uint) []uint {
-    var results = []uint{seed}
+	var results = []uint{seed}
 
-    for seed != 1 {
-        seed = nextNum(seed)
-        results = append(results, seed)
-    }
+	for seed != 1 {
+		seed = nextNum(seed)
+		results = append(results, seed)
+	}
 
-    return results
+	return results
 }
 
 func nextNum(n uint) uint {
-    if n % 2 == 0 {
-        return n / 2
-    } else {
-        return 3 * n + 1
-    }
+	if n%2 == 0 {
+		return n / 2
+	} else {
+		return 3*n + 1
+	}
 }
