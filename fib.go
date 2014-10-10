@@ -1,5 +1,5 @@
 // Package Fib provides tools for working with fibonacci numbers.
-package fib
+package euler
 
 // Nth returns the Nth fibonacci number.
 func Nth(n uint) uint {
