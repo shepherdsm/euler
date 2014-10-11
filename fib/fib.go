@@ -1,5 +1,5 @@
 // Package Fib provides tools for working with fibonacci numbers.
-package euler
+package fib
 
 // Nth returns the Nth fibonacci number.
 func Nth(n uint) uint {
@@ -21,10 +21,10 @@ func Nth(n uint) uint {
 	return nCur
 }
 
-// Generates all the fibonacci numbers under, but not including upper.
+// Generates all the fibonacci numbers under, but not including, upper.
 func Under(upper uint) []uint {
 	var results []uint
-	var n uint = 0
+	var n uint = 1
 
 	fib := Nth(n)
 

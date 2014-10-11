@@ -1,6 +1,10 @@
 package euler
 
 func Collatz(seed uint) []uint {
+	if seed <= 0 {
+		return nil
+	}
+
 	var results = []uint{seed}
 
 	for seed != 1 {
