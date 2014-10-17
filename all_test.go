@@ -44,6 +44,34 @@ var nextnum = []uint{
 	22,
 }
 
+var palVals = []int{
+	1,
+	132,
+	1551,
+	1000000001,
+	100000001,
+	-1000000001,
+	-100000001,
+	-1551,
+	-132,
+	-1,
+	0,
+}
+
+var palRes = []bool{
+	true,
+	false,
+	true,
+	true,
+	true,
+	true,
+	true,
+	true,
+	false,
+	true,
+	true,
+}
+
 func TestCollatz(t *testing.T) {
 	for i, num := range funcVals {
 		if got := Collatz(num); !reflect.DeepEqual(got, collatz[i]) {
@@ -57,5 +85,19 @@ func TestNextNum(t *testing.T) {
 		if got := nextNum(num); got != nextnum[i] {
 			t.Errorf("nextNum(%d) = %d, want %d", num, got, nextnum[i])
 		}
+	}
+}
+
+func TestIsPalindrome(t *testing.T) {
+	for i, num := range palVals {
+		if got := IsPalindrome(num); got != palRes[i] {
+			t.Errorf("IsPalindrome(%d) = %t, want %t", num, got, palRes[i])
+		}
+	}
+}
+
+func BenchmarkIsPalindrome(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		IsPalindrome(123454321)
 	}
 }
